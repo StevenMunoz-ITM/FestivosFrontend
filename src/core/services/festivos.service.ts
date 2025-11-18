@@ -9,10 +9,9 @@ import { Festivo } from '../models/festivo.model';
 export class FestivosService {
   private readonly http = inject(HttpClient);
   private readonly apiUrl = 'http://localhost:8080/api/festivos';
-  private readonly paisId = 1; // ID de Colombia en tu BD
+  private readonly paisId = 1;
 
   verificarFecha(anio: number, mes: number, dia: number): Observable<string> {
-    // Usar el endpoint del backend que ya tiene la lógica de Pascua
     return this.http.get<string>(
       `${this.apiUrl}/esfestivo/${this.paisId}/${dia}/${mes}/${anio}`,
       { responseType: 'text' as 'json' }

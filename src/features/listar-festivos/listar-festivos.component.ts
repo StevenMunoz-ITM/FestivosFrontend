@@ -18,7 +18,6 @@ export class ListarFestivosComponent {
   protected anio = signal<number>(new Date().getFullYear());
   protected festivos = signal<Festivo[]>([]);
   protected loading = signal<boolean>(false);
-  protected displayedColumns: string[] = ['festivo', 'fecha'];
 
   obtenerFestivos(): void {
     this.loading.set(true);

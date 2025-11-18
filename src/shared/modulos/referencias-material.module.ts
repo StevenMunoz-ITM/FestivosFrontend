@@ -27,6 +27,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 @NgModule({
   exports: [
     MatToolbarModule,
@@ -51,7 +53,9 @@ import { MatTableModule } from '@angular/material/table';
     MatAutocompleteModule,
 
     MatProgressSpinnerModule,
-    MatTableModule
+    MatTableModule,
+    
+    NgxDatatableModule
   ]
 })
 

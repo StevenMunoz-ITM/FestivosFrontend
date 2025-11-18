@@ -31,27 +31,39 @@
 
       @if (festivos().length > 0 && !loading()) {
         <div class="table-container">
-          <table mat-table [dataSource]="festivos()" class="mat-elevation-z8">
+          <ngx-datatable
+            class="material"
+            [rows]="festivos()"
+            [columnMode]="'force'"
+            [headerHeight]="50"
+            [footerHeight]="50"
+            [rowHeight]="'auto'"
+            [limit]="10"
+            [scrollbarH]="true">
             
-            <ng-container matColumnDef="festivo">
-              <th mat-header-cell *matHeaderCellDef>Festivo</th>
-              <td mat-cell *matCellDef="let festivo">{{ festivo.nombre }}</td>
-            </ng-container>
+            <ngx-datatable-column name="Festivo" prop="nombre">
+              <ng-template let-value="value" ngx-datatable-cell-template>
+                {{ value }}
+              </ng-template>
+            </ngx-datatable-column>
 
-            <ng-container matColumnDef="fecha">
-              <th mat-header-cell *matHeaderCellDef>Fecha</th>
-              <td mat-cell *matCellDef="let festivo">
-                @if (festivo.dia && festivo.mes) {
-                  {{ festivo.dia }}/{{ festivo.mes }}
+            <ngx-datatable-column name="Fecha">
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                @if (row.dia && row.mes) {
+                  {{ row.dia }}/{{ row.mes }}/{{ anio() }}
                 } @else {
                   Fecha variable
                 }
-              </td>
-            </ng-container>
+              </ng-template>
+            </ngx-datatable-column>
 
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
+            <ngx-datatable-column name="Tipo" prop="tipo.tipo">
+              <ng-template let-value="value" ngx-datatable-cell-template>
+                {{ value || 'N/A' }}
+              </ng-template>
+            </ngx-datatable-column>
+
+          </ngx-datatable>
           
           <p class="total-festivos">{{ festivos().length }} festivos encontrados</p>
         </div>
