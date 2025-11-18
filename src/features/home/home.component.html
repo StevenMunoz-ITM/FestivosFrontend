@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="welcome-section">
+    <h1>Festivos en Colombia</h1>
+    <p class="subtitle">Consulta los festivos nacionales de Colombia</p>
+    
+    <div class="cards-container">
+      <mat-card class="option-card">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>event</mat-icon>
+          <mat-card-title>Validar Fecha</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Verifica si una fecha específica corresponde a un día festivo en Colombia.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" routerLink="/validar-fecha">
+            Ir a Validar Fecha
+          </button>
+        </mat-card-actions>
+      </mat-card>
+
+      <mat-card class="option-card">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>list</mat-icon>
+          <mat-card-title>Lista de Festivos</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Consulta todos los festivos de un año específico.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" routerLink="/listar-festivos">
+            Ir a Lista de Festivos
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

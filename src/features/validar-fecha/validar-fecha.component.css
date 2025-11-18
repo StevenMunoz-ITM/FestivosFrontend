@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 64px);
+  padding: 20px;
+}
+
+mat-card {
+  max-width: 500px;
+  width: 100%;
+}
+
+mat-card-header {
+  margin-bottom: 20px;
+}
+
+mat-card-content {
+  padding: 20px 0;
+}
+
+.date-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.resultado {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.resultado.es-festivo {
+  background-color: #c8e6c9;
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+.resultado p {
+  margin: 0;
+  font-size: 16px;
+}
