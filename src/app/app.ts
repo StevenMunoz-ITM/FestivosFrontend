@@ -14,4 +14,5 @@ import { ReferenciasMaterialModule } from '../shared/modulos/referencias-materia
 })
 export class App {
   title = 'Festivos en Colombia';
+  opened = true;
 }

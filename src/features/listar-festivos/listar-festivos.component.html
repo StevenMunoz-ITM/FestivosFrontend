@@ -1,83 +1,34 @@
-<div class="container">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Festivos en Colombia</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="year-selector">
-        <mat-form-field appearance="fill">
-          <mat-label>Año</mat-label>
-          <input 
-            matInput 
-            type="number" 
-            [(ngModel)]="anio"
-            placeholder="2023">
-        </mat-form-field>
-        
-        <button 
-          mat-raised-button 
-          color="primary" 
-          (click)="obtenerFestivos()"
-          [disabled]="loading()">
-          Obtener Festivos
-        </button>
-      </div>
+<mat-toolbar>
+  <div class="barraTituloCRUD">
+    Gestión de Festivos
+  </div>
+</mat-toolbar>
 
-      @if (loading()) {
-        <div class="loading">
-          <mat-spinner></mat-spinner>
-        </div>
-      }
+<div class="crud-container">
+  <div class="search-section">
+    <mat-form-field appearance="fill">
+      <mat-label>Buscar</mat-label>
+      <input matInput [(ngModel)]="textoBusqueda">
+    </mat-form-field>
+    <button mat-stroked-button color="primary" (click)="buscar()">Buscar</button>
+  </div>
 
-      @if (festivos().length > 0 && !loading()) {
-        <div class="table-container">
-          <ngx-datatable
-            class="material"
-            [rows]="festivos()"
-            [columnMode]="'force'"
-            [headerHeight]="50"
-            [footerHeight]="50"
-            [rowHeight]="'auto'"
-            [limit]="10"
-            [scrollbarH]="true">
-            
-            <ngx-datatable-column name="Festivo" prop="nombre">
-              <ng-template let-value="value" ngx-datatable-cell-template>
-                {{ value }}
-              </ng-template>
-            </ngx-datatable-column>
+  <div class="actions-section">
+    <button mat-raised-button color="primary" (click)="agregar()">Agregar</button>
+    <button mat-raised-button color="accent" (click)="modificar()">Modificar</button>
+    <button mat-raised-button color="warn" (click)="eliminar()">Eliminar</button>
+  </div>
 
-            <ngx-datatable-column name="Fecha">
-              <ng-template let-row="row" ngx-datatable-cell-template>
-                @if (row.dia && row.mes) {
-                  {{ row.dia }}/{{ row.mes }}/{{ anio() }}
-                } @else {
-                  Fecha variable
-                }
-              </ng-template>
-            </ngx-datatable-column>
-
-            <ngx-datatable-column name="Tipo" prop="tipo.tipo">
-              <ng-template let-value="value" ngx-datatable-cell-template>
-                {{ value || 'N/A' }}
-              </ng-template>
-            </ngx-datatable-column>
-
-          </ngx-datatable>
-          
-          <p class="total-festivos">{{ festivos().length }} festivos encontrados</p>
-        </div>
-      }
-
-      @if (festivos().length === 0 && !loading()) {
-        <div class="no-data">
-          <p>Selecciona un año y presiona "Obtener Festivos"</p>
-        </div>
-      }
-    </mat-card-content>
-    
-    <mat-card-actions>
-      <button mat-button color="accent" routerLink="/inicio">Volver</button>
-    </mat-card-actions>
-  </mat-card>
+  <ngx-datatable
+    [rows]="festivos"
+    [columns]="columnas"
+    class="dark"
+    [rowHeight]="'auto'"
+    [columnMode]="modoColumna.force"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [limit]="10"
+    (activate)="escoger($event)"
+    [selectionType]="tipoSeleccion.single">
+  </ngx-datatable>
 </div>

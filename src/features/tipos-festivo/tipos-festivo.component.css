@@ -17,22 +17,24 @@
   margin: 0 auto;
 }
 
-.search-section {
+.info-section {
+  margin-bottom: 20px;
+}
+
+.info-section mat-card {
+  background-color: #e3f2fd;
+}
+
+.info-text {
   display: flex;
-  gap: 15px;
   align-items: center;
-  margin-bottom: 20px;
+  gap: 10px;
+  margin: 0;
+  color: #1976d2;
 }
 
-.search-section mat-form-field {
-  flex: 1;
-  max-width: 400px;
-}
-
-.actions-section {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
+.info-text mat-icon {
+  color: #1976d2;
 }
 
 ngx-datatable {
@@ -67,4 +69,14 @@ ngx-datatable {
 ::ng-deep .ngx-datatable.dark .datatable-footer {
   background-color: #fafafa;
   color: rgba(0, 0, 0, 0.54);
+}
+
+.total-count {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.total-count p {
+  color: #666;
+  font-style: italic;
 }

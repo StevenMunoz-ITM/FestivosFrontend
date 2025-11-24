@@ -1,35 +1,53 @@
 <div class="container">
   <div class="welcome-section">
     <h1>Festivos en Colombia</h1>
-    <p class="subtitle">Consulta los festivos nacionales de Colombia</p>
+    <p class="subtitle">Sistema de Gestión de Festivos Nacionales</p>
     
     <div class="cards-container">
       <mat-card class="option-card">
         <mat-card-header>
           <mat-icon mat-card-avatar>event</mat-icon>
-          <mat-card-title>Validar Fecha</mat-card-title>
+          <mat-card-title>Gestión de Festivos</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <p>Verifica si una fecha específica corresponde a un día festivo en Colombia.</p>
+          <p>Administra los festivos: consultar, agregar, modificar y eliminar.</p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-raised-button color="primary" routerLink="/validar-fecha">
-            Ir a Validar Fecha
+          <button mat-raised-button color="primary" routerLink="/festivos">
+            <mat-icon>manage_accounts</mat-icon>
+            Gestionar Festivos
           </button>
         </mat-card-actions>
       </mat-card>
 
       <mat-card class="option-card">
         <mat-card-header>
-          <mat-icon mat-card-avatar>list</mat-icon>
-          <mat-card-title>Lista de Festivos</mat-card-title>
+          <mat:icon mat-card-avatar>category</mat-icon>
+          <mat-card-title>Tipos de Festivo</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <p>Consulta todos los festivos de un año específico.</p>
+          <p>Consulta los tipos de festivos (fijos, puente, pascua, etc.).</p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-raised-button color="primary" routerLink="/listar-festivos">
-            Ir a Lista de Festivos
+          <button mat-raised-button color="accent" routerLink="/tipos-festivo">
+            <mat-icon>list_alt</mat-icon>
+            Ver Tipos
+          </button>
+        </mat-card-actions>
+      </mat-card>
+
+      <mat-card class="option-card">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>date_range</mat-icon>
+          <mat-card-title>Validar Fecha</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Verifica si una fecha específica es festivo en Colombia.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" routerLink="/validar-fecha">
+            <mat-icon>check_circle</mat-icon>
+            Validar Fecha
           </button>
         </mat-card-actions>
       </mat-card>

@@ -1,0 +1,35 @@
+<mat-toolbar>
+  <div class="barraTituloCRUD">
+    Tipos de Festivo
+  </div>
+</mat-toolbar>
+
+<div class="crud-container">
+  <div class="info-section">
+    <mat-card>
+      <mat-card-content>
+        <p class="info-text">
+          <mat-icon>info</mat-icon>
+          Los tipos de festivo determinan cómo se calcula la fecha de celebración
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <ngx-datatable
+    [rows]="tipos"
+    [columns]="columnas"
+    class="dark"
+    [rowHeight]="'auto'"
+    [columnMode]="modoColumna.force"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [limit]="10"
+    (activate)="escoger($event)"
+    [selectionType]="tipoSeleccion.single">
+  </ngx-datatable>
+
+  <div class="total-count">
+    <p>Total de tipos: {{ tipos.length }}</p>
+  </div>
+</div>

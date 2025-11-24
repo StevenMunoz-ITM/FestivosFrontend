@@ -1,15 +1,12 @@
+import { Pais } from './pais.model';
+import { Tipo } from './tipo.model';
+
 export interface Festivo {
   id?: number;
   nombre: string;
   dia?: number;
   mes?: number;
   diasPascua?: number;
-  pais?: {
-    id: number;
-    nombre: string;
-  };
-  tipo?: {
-    id: number;
-    tipo: string;
-  };
+  pais?: Pais;
+  tipo?: Tipo;
 }
