@@ -12,10 +12,11 @@ html, body {
 
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 .barraTituloCRUD {
-  background: rgb(24, 2, 53);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #fff;
   height: 75px;
   text-align: center;
@@ -23,6 +24,10 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 /* Estilos para ngx-datatable */

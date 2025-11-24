@@ -14,8 +14,12 @@
 
 h1 {
   font-size: 2.5rem;
-  color: #3f51b5;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .subtitle {
@@ -39,8 +43,8 @@ h1 {
 }
 
 .option-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3);
 }
 
 mat-card-header {
@@ -49,10 +53,13 @@ mat-card-header {
 }
 
 mat-icon[mat-card-avatar] {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   font-size: 50px;
-  color: #3f51b5;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 mat-card-title {
