@@ -3,13 +3,14 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Festivo } from '../models/festivo.model';
 import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FestivosService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = 'http://localhost:8080/api/festivos';
+  private readonly apiUrl = `${environment.urlBase}/festivos`;
   private readonly paisId = 1; // Colombia por defecto
 
   // Endpoint: GET /api/festivos/es-festivo?fecha=YYYY-MM-DD&paisId=1
