@@ -10,7 +10,7 @@ import { ReferenciasMaterialModule } from '../shared/modulos/referencias-materia
     ReferenciasMaterialModule
   ],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class App {
   title = 'Festivos en Colombia';

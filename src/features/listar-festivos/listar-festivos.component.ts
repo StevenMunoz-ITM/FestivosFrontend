@@ -1,7 +1,6 @@
 import { Component, signal, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
 import { ReferenciasMaterialModule } from '../../shared/modulos/referencias-material.module';
 import { FestivosService } from '../../core/services/festivos.service';
 import { TipoService } from '../../core/services/tipo.service';
@@ -17,7 +16,6 @@ import { DecidirComponent } from '../../shared/componentes/decidir/decidir.compo
   imports: [
     CommonModule, 
     FormsModule, 
-    RouterLink, 
     ReferenciasMaterialModule,
     NgxDatatableModule
   ],
